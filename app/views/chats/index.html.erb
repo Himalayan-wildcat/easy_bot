@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-  <h1 class>Easy Bot</h1>
+  <h3 class>Easy Bot</h3>
 
+ <%# 投稿フォーム %>
   <%= form_with(url: chats_path, method: :post, id: "new_chat", format: :json) do |form| %>
     <div class="field">
       <%= form.text_area :body, id: :chat_body, placeholder: "type a messags here", class:"textbox" %>
@@ -12,6 +13,7 @@
     </div>
   <% end %>
 
+<%# index画面内表示 %>
   <div class="body">
     <p><% @chats.each do |chat| %></p>
       You : <%= chat.body %>
